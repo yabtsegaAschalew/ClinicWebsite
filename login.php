@@ -56,8 +56,6 @@ if (isset($_POST['login'])) {
 }
 ?>
 
-<!-- Rest of your HTML remains unchanged -->
-
 
 <!DOCTYPE html>
 <html lang="en">
