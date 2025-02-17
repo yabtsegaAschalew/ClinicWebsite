@@ -89,8 +89,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['removeDoctor'])) {
       <label for="pwd">Password:</label>
       <input type="text" id="pwd" name="pwd" required>
 
-      <label for="specialization">Specialization:</label>
-      <input type="text" id="specialization" name="specialization" required>
+      <label for="specialization">Specialization: </label>
+        <select name="specialization" id="specialization" required>
+          <option value="cardiology">Cardiology</option>
+          <option value="chronic disease">Chronic disease</option>
+          <option value="dermatology">Dermatology</option>
+          <option value="gynecology">Gynecology</option>
+          <option value="orthopedics">Orthopedics</option>
+          <option value="pediatrics">Pediatrics</option>
+        </select>
 
       <label for="email">Doctor Email:</label>
       <input type="email" id="email" name="email" required>

@@ -1,12 +1,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Helps with consistent sizing */
+  box-sizing: border-box;
+  /* Helps with consistent sizing */
 }
 
-p, a, h1, h2 {
+p,
+a,
+h1,
+h2 {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
+
 .motto {
   font-size: 28px;
   color: rgb(168, 146, 146);
@@ -14,22 +19,27 @@ p, a, h1, h2 {
   margin-top: 20px;
   float: left;
 }
+
 .nav-bar {
   background: #f8f9fa;
   padding: 10px 20px;
   display: flex;
-  position: fixed;  /* Makes the navbar stick to the top */
+  position: fixed;
+  /* Makes the navbar stick to the top */
   top: 0;
   left: 0;
   width: 100%;
   /*justify-content: space-evenly;  Keeps motto on the left and menu on the right */
   align-items: center;
-  z-index: 1000; /* Ensures it stays above other elements */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for better visibility */
+  z-index: 1000;
+  /* Ensures it stays above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a slight shadow for better visibility */
 }
 
 .Motto {
-  flex: 1; /* Ensures it stays on the left */
+  flex: 1;
+  /* Ensures it stays on the left */
   font-size: 18px;
   font-weight: bold;
   color: rgb(168, 146, 146);
@@ -39,7 +49,8 @@ p, a, h1, h2 {
   list-style-type: none;
   display: flex;
   gap: 15px;
-  margin-right: 20px; /* Adds space from the right */
+  margin-right: 20px;
+  /* Adds space from the right */
 }
 
 .nav-bar ul li {
@@ -61,38 +72,50 @@ p, a, h1, h2 {
 
 /* Adds padding to the body so content doesn't hide behind navbar */
 body {
-  padding-top: 40px; /* Adjust based on navbar height */
+  padding-top: 40px;
+  /* Adjust based on navbar height */
 }
 
-.head{
+.head {
   background-image: url('../images/24285.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-  height: 80vh; /* Makes it take the full height of the viewport */
+  background-size: cover;
+  /* Ensures the image covers the entire area */
+  background-position: center;
+  /* Centers the image */
+  height: 80vh;
+  /* Makes it take the full height of the viewport */
   align-items: center;
   justify-content: center;
   z-index: 2;
-  
+
 }
-.welcome-text{
-  padding-top:100px ;
+
+.welcome-text {
+  padding-top: 100px;
   text-align: center;
   color: rgb(14, 26, 130);
   font-size: 70px;
   z-index: -1;
 }
-.company-description, .goal, .vision{
+
+.company-description,
+.goal,
+.vision {
   display: flex;
 }
-.company-description{
+
+.company-description {
   padding: 40px;
-  background:linear-gradient(166deg, #336db1, #fff);
+  background: linear-gradient(166deg, #336db1, #fff);
 }
-.visions, .goals{
+
+.visions,
+.goals {
   margin-left: 10px;
 }
-.images{
+
+.images {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +125,8 @@ body {
   box-shadow: inset 0 0 100px hsla(0, 0%, 0%, 0.3);
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
-.images::before{
+
+.images::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -112,7 +136,8 @@ body {
   opacity: 0.3;
   z-index: -1;
 }
-.images::after{
+
+.images::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -122,11 +147,15 @@ body {
   opacity: 0.3;
   z-index: -1;
 }
+
 .container-2 {
   display: flex;
-  gap: 20px; /* Increased spacing for better layout */
-  width: 1200px; /* Significantly increased width */
-  height: 600px; /* Increased height */
+  gap: 20px;
+  /* Increased spacing for better layout */
+  width: 1200px;
+  /* Significantly increased width */
+  height: 600px;
+  /* Increased height */
 }
 
 .img {
@@ -145,7 +174,8 @@ body {
 }
 
 .img:hover {
-  flex: 3; /* Enlarges the hovered image even more */
+  flex: 3;
+  /* Enlarges the hovered image even more */
   filter: brightness(1) saturate(1.2) contrast(1.1) blur(0px);
 }
 
@@ -153,7 +183,7 @@ body {
   display: block;
   width: 60%;
   padding: 12px;
-  font-size: 24px; 
+  font-size: 24px;
   text-align: center;
   color: #fff;
   letter-spacing: 1px;
@@ -169,38 +199,48 @@ body {
 .img:hover span {
   bottom: 25px;
 }
-.img a{
+
+.img a {
   color: white;
   text-decoration: none;
 }
-.img a:hover{
+
+.img a:hover {
   color: black;
 }
 
-.img1{
+.img1 {
   background-image: url("../images/Cardiology.jpg");
 }
-.img2{
+
+.img2 {
   background-image: url("../images/Chronic\ Disease.jpg");
 }
-.img3{
+
+.img3 {
   background-image: url("../images/Dermatology.jpg");
 }
-.img4{
+
+.img4 {
   background-image: url("../images/General\ Check-ups.jpg");
 }
-.img5{
+
+.img5 {
   background-image: url("../images/Gynecology.jpg");
 }
-.img6{
+
+.img6 {
   background-image: url("../images/Orthopedics.jpg");
 }
-.img7{
+
+.img7 {
   background-image: url("../images/Pediatrics.jpg");
 }
-.img8{
+
+.img8 {
   background-image: url("../images/Vaccination.jpg");
 }
+
 .contact {
   display: flex;
   justify-content: space-evenly;
@@ -208,16 +248,21 @@ body {
   background-color: #598bc1;
   color: white;
 }
-iframe{
+
+iframe {
   border-radius: 30px;
 }
+
 .contact p {
   font-size: 18px;
   font-weight: bold;
 }
-.contact .phone-num, .contact .email {
+
+.contact .phone-num,
+.contact .email {
   margin-bottom: 10px;
 }
+
 button {
   padding: 10px;
   border-radius: 12px;
@@ -226,21 +271,24 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  background: #007BFF; 
+  background: #007BFF;
   color: #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   margin-bottom: 5px;
 }
+
 button:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
   transform: scale(1.05);
   color: black;
 }
-button:active{
+
+button:active {
   background-color: #007BFF;
   color: white;
 }
-.copyright{
+
+.copyright {
   padding: 30px;
   height: 50px;
   display: block;
@@ -248,20 +296,30 @@ button:active{
   background-color: #124377;
   color: #ecedef;
 }
+
 .cardio {
-  display: none; /* Initially hidden */
+  display: none;
+  /* Initially hidden */
 }
 
 .show {
   display: block;
-  font-size: 6px;             /* Readable font size */
-  line-height: 1.6;            /* Comfortable line spacing */
-  text-align: left;            /* Align text to the left */
-  color: #333;                 /* Dark text for contrast */
-  margin: 0;              /* Space above and below the element */
-  border-radius: 4px;          /* Slightly rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional subtle shadow for depth */
+  font-size: 6px;
+  /* Readable font size */
+  line-height: 1.6;
+  /* Comfortable line spacing */
+  text-align: left;
+  /* Align text to the left */
+  color: #333;
+  /* Dark text for contrast */
+  margin: 0;
+  /* Space above and below the element */
+  border-radius: 4px;
+  /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Optional subtle shadow for depth */
 }
+
 .item {
   margin-top: 110px;
 }
@@ -273,7 +331,7 @@ button:active{
     height: auto !important;
     flex-wrap: wrap;
   }
-  
+
   .img {
     flex: 1 1 200px !important;
     height: 300px !important;
@@ -354,10 +412,11 @@ button:active{
     padding: 8px !important;
   }
 
-  .contact > div {
+  .contact>div {
     margin-bottom: 25px !important;
   }
 }
+
 @media (max-width: 768px) {
   body {
     padding-top: 120px !important;

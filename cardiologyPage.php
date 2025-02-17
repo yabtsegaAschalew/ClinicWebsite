@@ -43,56 +43,26 @@
             <th>Patient Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Specialization</th>
+            <th>Booked on</th>
             <th>Date</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Abebe Beso</td>
-            <td>abeBeso@gmail.com</td>
-            <td>0987654321</td>
-            <td>Orthopedics</td>
-            <td>2025-02-21</td>
-            <td>Pending</td>
+            
           </tr>
           <tr>
-            <td>2</td>
-            <td>Kebede Alemu</td>
-            <td>kebeAlemu@gmail.com</td>
-            <td>0989765748</td>
-            <td>Orthopedics</td>
-            <td>2025-02-21</td>
-            <td>Pending</td>
+            
           </tr>
           <tr>
-            <td>3</td>
-            <td>Chala Zelalem</td>
-            <td>chaZelalem@gmail.com</td>
-            <td>0978324321</td>
-            <td>General-Checkup</td>
-            <td>2025-02-21</td>
-            <td>Pending</td>
+            
           </tr>
           <tr>
-            <td>4</td>
-            <td>Helen Belayneh</td>
-            <td>helBelayneh@gmail.com</td>
-            <td>0987687901</td>
-            <td>Gynecology</td>
-            <td>2025-02-21</td>
-            <td>Pending</td>
+            
           </tr>
           <tr>
-            <td>5</td>
-            <td>Abebe Beso</td>
-            <td>abeBeso@gmail.com</td>
-            <td>0987654321</td>
-            <td>Orthopedics</td>
-            <td>2025-02-21</td>
-            <td>Pending</td>
+            
           </tr>
         </tbody>
       </table>

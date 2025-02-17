@@ -19,6 +19,7 @@ form label {
   margin-bottom: 5px;
   font-weight: bold;
   color: #333;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 form input[type="text"], form input[type="email"] {
   width: 100%;
