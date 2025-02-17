@@ -1,3 +1,6 @@
+<?php
+  require_once "includes/loginForm.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
