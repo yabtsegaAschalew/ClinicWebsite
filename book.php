@@ -1,5 +1,5 @@
 <?php
-  include_once "dbh.inc.php";
+  require_once "dbh.inc.php";
 
 
   $err = "";
@@ -144,7 +144,7 @@
         </div>
         <div>
           <?php
-            echo $err;
+            if(!empty($err)) echo "<p class = 'message'> " .$err. "</p>";
           ?>
           <label for="email">E-Mail: (Optional)</label>
           <input type="email" id="patient-email" name="email">
