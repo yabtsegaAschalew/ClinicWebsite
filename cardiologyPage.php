@@ -1,6 +1,11 @@
 <?php
   require_once "dbh.inc.php";
   
+  $stmt = $conn->prepare("SELECT * FROM appointments WHERE appointment_types = ?");
+  $appointment_type = 'cardiology';
+  $stmt->bind_param("s", $appointment_type);
+  $stmt->execute();
+  $result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,31 +44,30 @@
       <table border="1" cellpadding="10" cellspacing="0">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Patient Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Booked on</th>
-            <th>Date</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            
-          </tr>
-          <tr>
-            
-          </tr>
-          <tr>
-            
-          </tr>
-          <tr>
-            
-          </tr>
-          <tr>
-            
-          </tr>
+          <?php
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['phone'] . "</td>";
+                    echo "<td>" . $row['appointment_date'] ."</td>";
+                    //echo "<td>" . $row['status']. "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='7'>No appointments found</td></tr>";
+            }
+            ?>
+              
         </tbody>
       </table>
     </section>
