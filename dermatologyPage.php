@@ -1,5 +1,5 @@
 <?php
-require_once "dbh.inc.php";
+require_once "includes/dbh.inc.php";
 
 $stmt = $conn->prepare("SELECT * FROM appointments WHERE appointment_types = ?");
 $appointment_type = 'dermatology';
