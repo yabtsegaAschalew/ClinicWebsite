@@ -88,7 +88,7 @@ if (isset($_POST['login'])) {
     <div class="login">
       <div class="err">
         <?php
-        echo $err;
+          if(!empty($err)) echo $err;
         ?>
       </div>
       <form action="" method="post" name="login-form" onsubmit="return validateForm()">
