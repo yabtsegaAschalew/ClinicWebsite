@@ -1,38 +1,56 @@
 <?php
-/*require_once "dbh.inc.php";
+  include_once "dbh.inc.php";
 
-if (!$conn) {
+
+  $err = "";
+  if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-}
+  }
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $required = ['firstName', 'lastName', 'phone', 'appointment-date', 'appointment-time'];
+    foreach ($required as $field) {
+      if (empty($_POST[$field])) {
+        die("Error: Required field '$field' is missing.");
+      }
+    }
 
-$appointment_types = "";
-if (isset($_POST['appointment']) && is_array($_POST['appointment'])) {
-    $appointment_types = implode(", ", $_POST['appointment']);
-}
+    $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
+    $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
+    $email = mysqli_real_escape_string($conn, $_POST['email'] ?? '');
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+      $err = "Please enter a valid email";
+    }
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $appointment_date = mysqli_real_escape_string($conn, $_POST['appointment-date']);
+    $appointment_time = mysqli_real_escape_string($conn, $_POST['appointment-time']);
+    $appointment_types = [];
+    if (!empty($_POST['appointment'])) {
+      foreach ($_POST['appointment'] as $selected) {
+        $appointment_types[] = mysqli_real_escape_string($conn, $selected);
+      }
+    }
+    $appointment_types_str = implode(', ', $appointment_types);
 
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$appointment_date = $_POST['appointment-date'];
-$appointment_time = $_POST['appointment-time'];
+    $sql = "INSERT INTO appointments (firstName, lastName, email, phone, appointment_types, appointment_date, appointment_time) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-$sql = "INSERT INTO appointments (firstName, lastName, email, phone, appointment_types, appointment_date, appointment_time)
-        VALUES ('".$firstName."', '".$lastName."', '".$email."', '".$phone."', '".$appointment_types."', '".$appointment_date."', '".$appointment_time."')";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssssss', $firstName, $lastName, $email, $phone, $appointment_types_str, $appointment_date, $appointment_time);
 
-if (mysqli_query($conn, $sql)) {
-    echo "Appointment booked successfully!";
-    header("location:book.php");
-} else {
-    echo "Error inserting data: " . mysqli_error($conn);
-    header("location:book.php");
-}
-//Not working
-*/
+    if (mysqli_stmt_execute($stmt)) {
+      header("Location:index.php");
+      exit();
+    } else {
+      header("Location:book.php?error=" . urlencode(mysqli_error($conn)));
+      exit();
+    }
+
+    mysqli_stmt_close($stmt);
+  }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +79,7 @@ if (mysqli_query($conn, $sql)) {
 
   <main>
     <h1>Book Your Appointment</h1>
-    <form action="processBooking.php" method="post" id="bookingForm">
+    <form action="" method="post" id="bookingForm">
       <fieldset>
         <legend>Select Appointment Type(s)</legend>
         <div class="checkbox-group">
@@ -113,7 +131,7 @@ if (mysqli_query($conn, $sql)) {
         <p class="date-time-error"></p>
       </fieldset>
 
-      
+
       <fieldset>
         <legend>Your Information</legend>
         <div>
@@ -125,6 +143,9 @@ if (mysqli_query($conn, $sql)) {
           <input type="text" id="lastName" name="lastName" required>
         </div>
         <div>
+          <?php
+            echo $err;
+          ?>
           <label for="email">E-Mail: (Optional)</label>
           <input type="email" id="patient-email" name="email">
         </div>
@@ -138,9 +159,9 @@ if (mysqli_query($conn, $sql)) {
     </form>
   </main>
   <footer>
-      <div class="copyright">
-        <p id="copyright">&copy;2025 All rights reserved</p>
-      </div>
+    <div class="copyright">
+      <p id="copyright">&copy;2025 All rights reserved</p>
+    </div>
   </footer>
   <script src="js/script.js"></script>
   <script src="js/booking.js"></script>
