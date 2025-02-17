@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Helps with consistent sizing */
+}
+/* Container for each image and paragraph pair */
+.item {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  margin-top: 110px;  
+}
+
+/* Image styling */
+.item img {
+  flex-shrink: 0;
+  width: 70%;           /* Image occupies 40% of the container */
+  max-width: 250px;     /* Prevents the image from becoming too large */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Paragraph styling */
+.item p {
+  flex: 1;              /* Paragraph fills the remaining space */
+  margin-left: 20px;    /* Space between image and text */
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect for paragraph */
+.item p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #007BFF;
+  transition: width 0.3s ease;
+}
+
+/* Hover effects triggered by the container */
+.item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.item:hover p {
+  color: #007BFF;
+}
+
+.item:hover p::after {
+  width: 100%;
+}
+#first-item{
+  margin-top: 100px;
+}
+/* Patient Request Form Styling */
+.patient-request {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto 60px; /* extra top and bottom spacing */
+  padding: 20px;
+  background: #f8f8f8;            /* light background for contrast */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.patient-request form div {
+  margin-bottom: 15px;
+}
+
+.patient-request label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+.patient-request input[type="email"],
+.patient-request input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.patient-request input[type="email"]:focus,
+.patient-request input[type="text"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.patient-request button{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.patient-request button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+.red{
+  border: red 1px solid;
+}
+button a{
+  text-decoration: none;
+  color: white;
+}
+button a:hover{
+  color: black;
+}
+.copyright{
+  display: block;
+  text-align: center;
+  background-color: #598bc1;
+  color: #fff;
+  padding: 30px;
+}

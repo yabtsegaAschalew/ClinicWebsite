@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Helps with consistent sizing */
+}
+
+p, a, h1, h2 {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+.motto {
+  font-size: 28px;
+  color: rgb(168, 146, 146);
+  font-weight: bold;
+  margin-top: 20px;
+  float: left;
+}
+.nav-bar {
+  background: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  position: fixed;  /* Makes the navbar stick to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*justify-content: space-evenly;  Keeps motto on the left and menu on the right */
+  align-items: center;
+  z-index: 1000; /* Ensures it stays above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for better visibility */
+}
+
+.Motto {
+  flex: 1; /* Ensures it stays on the left */
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(168, 146, 146);
+}
+
+.nav-bar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  margin-right: 20px; /* Adds space from the right */
+}
+
+.nav-bar ul li {
+  list-style: none;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.nav-bar ul li a:hover {
+  color: white;
+}
+
+/* Adds padding to the body so content doesn't hide behind navbar */
+body {
+  padding-top: 40px; /* Adjust based on navbar height */
+}
+
+.head{
+  background-image: url('../images/24285.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  height: 80vh; /* Makes it take the full height of the viewport */
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  
+}
+.welcome-text{
+  padding-top:100px ;
+  text-align: center;
+  color: rgb(14, 26, 130);
+  font-size: 70px;
+  z-index: -1;
+}
+.company-description, .goal, .vision{
+  display: flex;
+}
+.company-description{
+  padding: 40px;
+  background:linear-gradient(166deg, #336db1, #fff);
+}
+.visions, .goals{
+  margin-left: 10px;
+}
+.images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0, 0%, 0%, 0.3);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+.images::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: -1;
+}
+.images::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: -1;
+}
+.container-2 {
+  display: flex;
+  gap: 20px; /* Increased spacing for better layout */
+  width: 1200px; /* Significantly increased width */
+  height: 600px; /* Increased height */
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7) saturate(0.8) contrast(1) blur(2px);
+  border-radius: 20px;
+  transition: flex 0.4s ease-in-out, filter 0.4s ease-in-out;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -12px;
+  border: 2px solid #8b9da9;
+}
+
+.img:hover {
+  flex: 3; /* Enlarges the hovered image even more */
+  filter: brightness(1) saturate(1.2) contrast(1.1) blur(0px);
+}
+
+.img span {
+  display: block;
+  width: 60%;
+  padding: 12px;
+  font-size: 24px; 
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease-in-out;
+  text-shadow: 3px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.img:hover span {
+  bottom: 25px;
+}
+.img a{
+  color: white;
+  text-decoration: none;
+}
+.img a:hover{
+  color: black;
+}
+
+.img1{
+  background-image: url("../images/Cardiology.jpg");
+}
+.img2{
+  background-image: url("../images/Chronic\ Disease.jpg");
+}
+.img3{
+  background-image: url("../images/Dermatology.jpg");
+}
+.img4{
+  background-image: url("../images/General\ Check-ups.jpg");
+}
+.img5{
+  background-image: url("../images/Gynecology.jpg");
+}
+.img6{
+  background-image: url("../images/Orthopedics.jpg");
+}
+.img7{
+  background-image: url("../images/Pediatrics.jpg");
+}
+.img8{
+  background-image: url("../images/Vaccination.jpg");
+}
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 140px;
+  background-color: #598bc1;
+  color: white;
+}
+iframe{
+  border-radius: 30px;
+}
+.contact p {
+  font-size: 18px;
+  font-weight: bold;
+}
+.contact .phone-num, .contact .email {
+  margin-bottom: 10px;
+}
+button {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #007BFF; 
+  color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+button:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05);
+  color: black;
+}
+button:active{
+  background-color: #007BFF;
+  color: white;
+}
+.copyright{
+  padding: 30px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  background-color: #124377;
+  color: #ecedef;
+}
+.cardio {
+  display: none; /* Initially hidden */
+}
+
+.show {
+  display: block;
+  font-size: 6px;             /* Readable font size */
+  line-height: 1.6;            /* Comfortable line spacing */
+  text-align: left;            /* Align text to the left */
+  color: #333;                 /* Dark text for contrast */
+  margin: 0;              /* Space above and below the element */
+  border-radius: 4px;          /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional subtle shadow for depth */
+}
+.item {
+  margin-top: 110px;
+}
+
+
+@media (max-width: 1200px) {
+  .container-2 {
+    width: 90% !important;
+    height: auto !important;
+    flex-wrap: wrap;
+  }
+  
+  .img {
+    flex: 1 1 200px !important;
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column !important;
+    padding: 10px !important;
+  }
+
+  .Motto {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    float: none !important;
+  }
+
+  .nav-bar ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin-right: 0 !important;
+  }
+
+  .welcome-text {
+    font-size: 40px !important;
+    padding-top: 80px !important;
+  }
+
+  .company-description {
+    flex-direction: column !important;
+    padding: 30px !important;
+  }
+
+  .container-2 {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .img {
+    width: 90% !important;
+    margin: 10px auto !important;
+    flex: unset !important;
+  }
+
+  .contact {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .google-map iframe {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .motto {
+    font-size: 20px !important;
+  }
+
+  .welcome-text {
+    font-size: 30px !important;
+    padding-top: 60px !important;
+  }
+
+  .nav-bar ul li button {
+    width: 100% !important;
+    margin: 5px 0 !important;
+  }
+
+  .company-description {
+    padding: 20px !important;
+  }
+
+  .img span button {
+    font-size: 14px !important;
+    padding: 8px !important;
+  }
+
+  .contact > div {
+    margin-bottom: 25px !important;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px !important;
+  }
+}
