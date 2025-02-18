@@ -113,10 +113,10 @@
     </form>
   </main>
   <footer>
-    <div class="copyright">
-      <p id="copyright">&copy;2025 All rights reserved</p>
-    </div>
-  </footer>
+      <div class="copyright">
+        <p id="copyright">&copy;2025 All rights reserved</p>
+      </div>
+    </footer>
   <script src="js/script.js"></script>
   <script src="js/booking.js"></script>
 </body>
