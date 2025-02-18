@@ -3,7 +3,7 @@ const requestMed = document.getElementById('med-id');
 const copyrightText = document.getElementById('copyright');
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.body.addEventListener("DOMContentLoaded", function() {
   const disp = document.querySelectorAll(".container-2 .img");
 
 
