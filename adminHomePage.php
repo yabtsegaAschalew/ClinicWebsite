@@ -11,10 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addDoctor'])) {
   $pwd = trim($_POST['pwd']);
   $specialization = $_POST['specialization'];
 
+  $options = [
+    'cost' => 12
+  ];
+  $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT, $options);
+
 
   if (!empty($fname) && !empty($lname) && !empty($email) && !empty($pwd) && !empty($specialization)) {
     $sql = "INSERT INTO users (firstName, lastName, email, pwd, role) 
-                VALUES ('" . $fname . "', '" . $lname . "', '" . $email . "', '" . $pwd . "', '" . $specialization . "')";
+                VALUES ('" . $fname . "', '" . $lname . "', '" . $email . "', '" . $hashedpwd . "', '" . $specialization . "')";
     if (mysqli_query($conn, $sql)) {
       $message = "Doctor added successfully!";
     } else {
@@ -101,6 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['removeDoctor'])) {
         <option value="orthopedics">Orthopedics</option>
         <option value="pediatrics">Pediatrics</option>
         <option value="nurse">Nurse</option>
+        <option value="admin">Admin</option>
+
       </select>
 
       <label for="email">Doctor Email:</label>

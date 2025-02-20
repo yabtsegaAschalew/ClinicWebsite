@@ -3,9 +3,6 @@
 
 
   $err = "";
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $required = ['firstName', 'lastName', 'phone', 'appointment-date', 'appointment-time'];
     foreach ($required as $field) {
